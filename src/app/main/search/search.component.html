@@ -1,0 +1,13 @@
+
+<h2>Search results for: {{keyword}}</h2>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div *ngFor="let movie of searchResult"  class="col-lg-3 col-md-3 col-sm-12"> 
+            <app-movie-card [movie]="movie"></app-movie-card>
+        </div>
+    </div>
+    <div *ngIf="searchResult.length === 0">No results</div>
+</div>    
+
+

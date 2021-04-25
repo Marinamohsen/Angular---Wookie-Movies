@@ -17,12 +17,7 @@ export class SearchService {
     return this._http.get(`https://wookie.codesubmit.io/movies?q=` + keyword )
   }
   
+
   
 }
 
-
-
-
-// getMovies(): Observable<any> {
-//   return this._http.get(`https://wookie.codesubmit.io/movies`)
-// }
