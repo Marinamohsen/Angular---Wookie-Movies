@@ -1,5 +1,6 @@
 button.selected {
-  background-color: yellow;
+  background-color: #555554;
+  border: 1px solid #555554;
 }
 
 .btns {
