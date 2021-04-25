@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { MoviesService } from '../../services/movies-service/moviesservice.service';
 import { IMovie } from '../../interfaces/interface'
+import { ActivatedRoute, Router } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-movie-card',
@@ -10,20 +12,19 @@ import { IMovie } from '../../interfaces/interface'
 })
 export class MovieCardComponent implements OnInit {
   
-  movies: IMovie[] = []
-
- 
-  constructor( private moviesService: MoviesService) { }
+  @Input() movie: IMovie | null = null
+  
+  constructor( private moviesService: MoviesService , private router: Router) { }
   
   ngOnInit(): void {
 
-    this.moviesService.getMovies().subscribe(res => {
-      this.movies = res.movies
-
-      console.log(this.movies)
-    });
-  
-
+    
+    
   }
+
+  singleMovie(id: string) {      
+    this.router.navigate(['/movies/' + id]);
+  }  
+
 }
 
