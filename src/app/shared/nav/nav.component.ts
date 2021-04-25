@@ -1,6 +1,9 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { from } from 'rxjs';
 import { SearchService } from '../../services/search-service/search.service'
+
 
 @Component({
   selector: 'app-nav',
@@ -11,27 +14,18 @@ export class NavComponent implements OnInit {
   
   searchText: string = '';
   
-  constructor(private searchService: SearchService) { }
-  
-  
-  ngOnInit():void{
+  constructor(private searchService: SearchService, private route: ActivatedRoute,
+    private router: Router) { }
+    
+    
+    ngOnInit(): void {
+      
+    }
+    
+    
+    searchChanged(searchText: any) {      
+      this.router.navigate(['/search/' + searchText]);
+    }
     
   }
   
-
-  searchChanged(searchText: any) {
-    
-    console.log(searchText)
-
-    this.searchService.search(this.searchText).subscribe(res => {
-
-      let searchResult = res.movies
-       console.log(searchResult)
-     });
- 
-  }
-  
-  
-}
-
-
