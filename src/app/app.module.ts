@@ -13,6 +13,8 @@ import { MovieCardComponent } from './main/movie-card/movie-card.component';
 import { FilterPipe } from './pipe-filters/filter.pipe';
 import { NavComponent } from './shared/nav/nav.component';
 import { SingleMovieComponent } from './main/single-movie/single-movie.component';
+import { SearchComponent } from './main/search/search.component';
+import { MoviesComponent } from './main/movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SingleMovieComponent } from './main/single-movie/single-movie.component
     MovieCardComponent,
     FilterPipe,
     NavComponent,
-    SingleMovieComponent
+    SingleMovieComponent,
+    SearchComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,

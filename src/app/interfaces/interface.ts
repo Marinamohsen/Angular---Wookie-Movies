@@ -3,7 +3,7 @@ export interface IMovie {
     cast: ICast;
     classification: string;
     director: string;
-    genres: IGenres;
+    genres: string[];
     id: string;
     imdb_rating: number;
     length: string;
@@ -18,12 +18,5 @@ export interface IMovie {
 export interface ICast {
     cast: string;
 }
-
-export interface IGenres {
-    genres: string;
-}
-
-
-
 
 
