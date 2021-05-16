@@ -20,9 +20,9 @@ export class SearchComponent implements OnInit {
 
       this.searchService.search(this.keyword).subscribe(res => {
         this.searchResult = res?.movies
-      });
+      })
  
-    });
+    })
   }
 
 }
